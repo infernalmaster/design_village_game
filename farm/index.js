@@ -53,8 +53,11 @@ filedImage.onload = () => {
     popupTimer.textContent = result;
     const msg = `Мій результат ${result} с`;
     shareBtn.href = 'https://www.facebook.com/dialog/feed?' +
-      'app_id=145634995501895&display=popup' +
-      `&amp;description=${encodeURI(msg)}&link=http%3A%2F%2Fpromo.designvillage.com.ua`;
+      'app_id=341125149583994&display=popup' +
+      '&amp;' +
+      `name=${encodeURI('Design Village Game')}` +
+      `&description=${encodeURI(msg)}` +
+      '&link=https%3A%2F%2Fpromo.designvillage.com.ua';
   }
 
 
@@ -112,4 +115,4 @@ filedImage.onload = () => {
   }
   tick();
 }
-filedImage.src = 'farm/field.png';
+filedImage.src = 'assets/field.png';

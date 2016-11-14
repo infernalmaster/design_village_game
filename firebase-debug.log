@@ -1,0 +1,20 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/Cellar/node/6.0.0/bin/node /usr/local/bin/firebase deploy
+[debug] CLI Version:  3.1.0
+[debug] Platform:     darwin
+[debug] Node Version: v6.0.0
+[debug] Time:         Tue Nov 15 2016 01:08:53 GMT+0200 (EET)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/designvillagegame 
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/designvillagegame/tokens 
+[debug] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'designvillagegame'...
+[info] 
+[info] i  deploying database, hosting
+[info] ✔  database: rules ready to deploy.
+[info] i  hosting: preparing / directory for upload...
+[debug] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/designvillagegame/uploads/-KW_5R7ni1YTw2I3BbbA?fileCount=7534&message= 

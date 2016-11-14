@@ -31,7 +31,9 @@
   "scripts": {
     "start": "budo index.js:bundle.js --live -v -o -- -t babelify -t glslify -p errorify | garnish",
     "chrome": "budo-chrome index.js:bundle.js --open -v -- -t babelify -t glslify -p errorify | garnish",
+    "deploy": "npm run clear && npm run prod && npm run gzip && firebase deploy",
     "prod": "browserify index.js -t babelify  | uglifyjs > bundle.js",
-    "gzip": "browserify index.js -t babelify  | uglifyjs | gzip > bundle.js.gz"
+    "gzip": "gzip -c bundle.js > bundle.js.gz",
+    "clear": "rm -rf bundle.js bundle.js.gz"
   }
 }
