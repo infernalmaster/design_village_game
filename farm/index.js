@@ -52,11 +52,9 @@ filedImage.onload = () => {
     const result = timer.getFormatedTimer();
     popupTimer.textContent = result;
     const msg = `Мій результат ${result} с`;
-    shareBtn.href = `https://www.facebook.com/dialog/feed?
-app_id=145634995501895
-&display=popup
-&amp;description=${encodeURI(msg)}
-&link=http%3A%2F%2Fpromo.designvillage.com.ua`
+    shareBtn.href = 'https://www.facebook.com/dialog/feed?' +
+      'app_id=145634995501895&display=popup' +
+      `&amp;description=${encodeURI(msg)}&link=http%3A%2F%2Fpromo.designvillage.com.ua`;
   }
 
 
