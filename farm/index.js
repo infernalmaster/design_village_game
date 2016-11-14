@@ -114,4 +114,4 @@ app_id=145634995501895
   }
   tick();
 }
-filedImage.src = '/farm/field.png';
+filedImage.src = 'farm/field.png';
