@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Design Village Game - 2016</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://promo.designvillage.com.ua/farm/fb_im.png">
+    <meta property="og:title" content="Design Village Game - 2016">
+    <meta property="og:url" content="http://promo.designvillage.com.ua">
+
+    <style>
+    body { margin: 0; }
+    body > .errorify {
+      color: red;
+      font-family: 'Consolas', monospace;
+      padding: 5px 10px;
+      word-wrap: break-word;
+      font-size: 14px;
+      overflow: hidden;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+    }
+    #game {
+      font-family: 'Open Sans', sans-serif;
+      background: url('/farm/bg.png');
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    #logo {
+      display: block;
+      position: absolute;
+      margin: auto;
+      left: 0; right: 0;
+      top: 34px;
+      background: url(/farm/logo.png);
+      width: 348px;
+      height: 98px;
+      z-index: 5;
+    }
+
+    #startLine {
+      position: absolute;
+      left: 20px;
+      background: url(/farm/start.png);
+      width: 162px;
+      height: 40px;
+      bottom: 182px;
+    }
+
+    #combain {
+      background: url(/farm/combain.png);
+      height: 130px;
+      margin-top: -65px;
+
+      width: 154px;
+      margin-left: -77px;
+
+      position: absolute;
+    }
+
+    #combainShadow {
+      background: url(/farm/combainShadow.png);
+      height: 148px;
+      margin-top: -74px;
+
+      width: 172px;
+      margin-left: -86px;
+
+      position: absolute;
+    }
+
+    #trak {
+      position: absolute;
+    }
+
+    #trees {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('/farm/trees.png') no-repeat center center;
+    }
+
+    #score {
+      position: absolute;
+      right: 87px;
+      top: 70px;
+    }
+
+    .big_text {
+      color: #fff;
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    #timer {
+      position: absolute;
+      left: 87px;
+      top: 70px;
+      color: #fff;
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .restart {
+      position: absolute;
+      right: 87px;
+      bottom: 70px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border: none;
+      border-radius: 8px;
+      background-color:  #2faeff;
+      height: 40px;
+      cursor: pointer;
+
+      padding: 0 20px;
+      font-family: 'Open Sans', sans-serif;
+      color:  #ffffff;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 42px;
+      text-align: center;
+      outline: none;
+
+      margin-left: 25px;
+    }
+
+    .btn--dark {
+      background-color:  #3b5998;
+    }
+
+
+
+    .popup {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 3;
+      background: rgba(0,0,0, 0.7);
+    }
+
+
+    .p_result_header{
+      color:  #ffffff;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 12px;
+    }
+
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .c_text {
+      text-align: center;
+    }
+
+    .share_btns {
+      position: absolute;
+      bottom: 70px;
+      width: 100%;
+    }
+
+    .pi_row {
+      margin-bottom: 20px;
+    }
+    .pi_row1 {
+      margin-bottom: 50px;
+    }
+
+    .pi_im1 {
+      display: inline-block;
+      vertical-align: bottom;
+      background: url('/farm/i-arrows.png');
+
+      width: 148px;
+      height: 98px;
+      margin-right: 10px;
+    }
+
+    .pi_im2 {
+      display: inline-block;
+      vertical-align: middle;
+      background: url('/farm/i-timer.png');
+
+      width: 118px;
+      height: 58px;
+      margin: 0 25px 0 15px;
+    }
+
+    .pi_im3 {
+      display: inline-block;
+      vertical-align: middle;
+      background: url('/farm/i-field.png');
+
+      width: 118px;
+      height: 58px;
+      margin: 0 25px 0 15px;
+    }
+
+
+    .pi_txt {
+      color:  #ffffff;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 47px;
+    }
+
+    .js-instruction-popup {
+      display: block;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div id="game">
+
+      <div class="popup js-instruction-popup">
+        <div class="centered">
+          <div class="pi_row pi_row1">
+            <span class="pi_im1"></span>
+            <span class="pi_txt">— керуй комбайном</span>
+
+          </div>
+          <div class="pi_row">
+            <span class="pi_im2"></span>
+            <span class="pi_txt">— час наше все, слідкуй за таймером</span>
+          </div>
+          <div class="pi_row">
+            <span class="pi_im3"></span>
+            <span class="pi_txt">— прибери весь урожай з поля</span>
+          </div>
+
+        </div>
+
+        <div class="share_btns c_text">
+          <button class="btn js-restart">СТАРТУВАТИ</button>
+        </div>
+      </div>
+
+      <div class="popup js-result-popup">
+        <div class="centered c_text">
+          <h2 class="p_result_header">Ваш результат:</h2>
+          <span class="big_text js-popup-timer"></span>
+        </div>
+
+        <div class="share_btns c_text">
+          <button class="btn js-restart">СПРОБУВАТИ ЩЕ</button>
+
+          <a class="btn btn--dark js-share"
+            href=""
+            onclick="return !window.open(this.href, 'Share on Facebook', 'width=640, height=536')">
+            ПОДІЛИТИСЯ З ДРУЗЯМИ
+          </a>
+
+        </div>
+      </div>
+
+      <a id='logo' href="http://designvillage.com.ua/"></a>
+      <div id='startLine'></div>
+      <canvas id='trak'></canvas>
+
+      <div id="combainShadow"></div>
+      <div id="combain"></div>
+
+      <div id="trees"></div>
+
+      <div id="score" class="big_text"></div>
+      <div id="timer"></div>
+
+      <button class="btn restart js-restart">РЕСТАРТ</button>
+    </div>
+    <script src="bundle.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700&amp;subset=cyrillic" rel="stylesheet">
+</body>
+</html>
