@@ -20,7 +20,7 @@ export default function createCombain(size) {
     x: 0, y: 0, angle: 0,
 
     speed: 2,
-    alngleSpeed: 2,
+    angleSpeed: 2,
 
 
     update(controls) {
@@ -29,7 +29,7 @@ export default function createCombain(size) {
 
       const nextX = combain.x + Math.cos(combain.angle * degToRad) * combain.speed * direction;
       const nextY = combain.y + Math.sin(combain.angle * degToRad) * combain.speed * direction;
-      const nextAngle = combain.angle + angleDirection * combain.alngleSpeed * direction;
+      const nextAngle = combain.angle + angleDirection * combain.angleSpeed * direction;
 
 
       let isColided = false;
